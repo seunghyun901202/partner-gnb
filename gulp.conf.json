@@ -1,0 +1,28 @@
+{
+  "path": {
+    "src": {
+      "js": "./assets/js/app/**/*.js",
+      "scss": "./assets/scss/app.scss",
+      "html": "./template/*.html"
+    },
+    "watch": {
+      "js": "./assets/js/app/**/*.js",
+      "scss": "./assets/scss/**/*.scss",
+      "html": "./template/**/*.html"
+    },
+    "build": {
+      "js": "./build/js",
+      "css": "./build/css",
+      "html": "./"
+    },
+    "dist": {
+      "js": "./dist/js",
+      "css": "./dist/css"
+    }
+  },
+  "name": {
+    "app": "app.js",
+    "vendor": "vendor.js",
+    "default": "default.js"
+  }
+}

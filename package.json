@@ -1,0 +1,38 @@
+{
+  "name": "newtype-gulp-boilerplate",
+  "version": "1.0.0",
+  "description": "Gulp 기반 프로젝트 보일러플레이트",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Newtype",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/register": "^7.22.15",
+    "browser-sync": "^2.26.7",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-bless": "^3.1.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-debug": "^2.1.2",
+    "gulp-file-include": "^1.2.0",
+    "gulp-minify": "0.0.14",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.1.1",
+    "gulp-size": "^2.1.0",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-ver": "^0.1.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2",
+    "sweetalert2": "^11.10.1"
+  }
+}

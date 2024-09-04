@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: SamsungOne400, sans-serif;
+}
+
+body {
+  line-height: 1.625;
+}
+
+a, a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+figure {
+  margin-bottom: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+input, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: 0;
+}

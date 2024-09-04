@@ -1,0 +1,177 @@
+<!--<script src="/build/js/vendor.min.js"></script>-->
+<!--<script src="/build/js/app.js"></script>-->
+
+<script>
+  // HEADER
+  $(function () {
+    checkGap();
+
+    // HEADER Scroll Interaction
+    $(window).on('scroll', function () {
+      var currentScroll = window.scrollY;
+      var flagHeight = 0;
+      if (window.matchMedia('(max-width: 767px)').matches) {
+        flagHeight = 56;
+      } else {
+        flagHeight = 112;
+      }
+      if (currentScroll > flagHeight) {
+        $('.sdp-header.sub .header-breadcrumb-fixed').addClass('active');
+      } else {
+        $('.sdp-header.sub .header-breadcrumb-fixed').removeClass('active');
+      }
+    });
+
+    function checkGap() {
+      var headerContainer = $('.header-container');
+      var breadcrumb = $('.sub-nav-breadcrumb');
+      var utilMenu = $('.sub-nav-util');
+
+      var breadcrumbRight = breadcrumb.offset().left + breadcrumb.outerWidth();
+      var utilMenuLeft = utilMenu.offset().left;
+      var gap = utilMenuLeft - breadcrumbRight;
+
+      if (gap <= 100) {
+        headerContainer.addClass('line-break');
+      } else {
+        headerContainer.removeClass('line-break');
+      }
+    }
+
+    $(window).on('resize', checkGap);
+
+    // GNB Open
+    $('[data-target="gnb"]').on('click', function () {
+      $('[data-open="gnb"]').addClass('open');
+      $('[data-target="header"]').find('[data-target="headerDimmed"]').stop().fadeIn(150);
+    });
+
+    // Dimmed Event
+    $('[data-target="headerDimmed"]').on('click', function () {
+      if ($('[data-target="headerSearch"]').hasClass('open')) {
+        $('[data-target="headerSearch"]').removeClass('open');
+      }
+      if ($('[data-target="sdpLnb"]').hasClass('open')) {
+        if($('[data-open="gnb"]').hasClass('open')) {
+          $('[data-open="gnb"]').removeClass('open');
+        } else {
+          $('[data-target="sdpLnb"]').removeClass('open');
+          setTimeout(function () {
+            $('main').prepend($('[data-target="sdpLnb"]'));
+          }, 200);
+          $('[data-target="header"]').find('[data-target="headerDimmed"]').stop().fadeOut(150);
+        }
+      } else {
+        $('[data-open="gnb"]').removeClass('open');
+        $('[data-target="header"]').find('[data-target="headerDimmed"]').stop().fadeOut(150);
+      }
+    });
+
+    // SuvMenu Dimmed Event
+    $('[data-target="subNavDimmed"]').on('click', function () {
+      $('[data-target="moreLink"]').removeClass('open');
+      $('[data-target="moreLink"]').parent().find('.breadcrumb-sub-menu').slideUp();
+      $('[data-target="header"]').find('[data-target="subNavDimmed"]').stop().fadeOut(150);
+    })
+
+    // GNB Close
+    $('[data-close="gnb"]').on('click', function () {
+      $('[data-open="gnb"]').removeClass('open');
+      if (!$('[data-target="sdpLnb"]').hasClass('open')) {
+        $('[data-target="header"]').find('[data-target="headerDimmed"]').stop().fadeOut(150);
+      }
+    });
+
+    // GNB Accordion
+    $('[data-target="navMenu"] li [data-target="navArrow"]').on('click', function () {
+      if ($(this).parent().hasClass('selected')) {
+        $(this).parent().removeClass('selected');
+        $(this).parent().find('.nav-dynamic-menu').slideUp();
+        return;
+      }
+
+      $('[data-target="navMenu"] li').removeClass('selected');
+      $('[data-target="navMenu"] li').find('.nav-dynamic-menu').slideUp();
+      $(this).parent().addClass('selected');
+      $(this).parent().find('.nav-dynamic-menu').slideDown();
+    });
+
+    // GNB Sub Menu Show
+    $('[data-target="navMenu"] > li:not(.single)').on('mouseenter', function () {
+      $('[data-target="header"]').find('[data-target="headerDimmed"]').stop().fadeIn(150);
+    });
+
+    // GNB Sub Menu Hide
+    $('[data-target="navMenu"] > li:not(.single)').on('mouseleave', function () {
+      $('[data-target="header"]').find('[data-target="headerDimmed"]').stop().fadeOut(150);
+    });
+
+    // Breadcrumb + Nav Show
+    $('[data-target="moreLink"]').on('click', function () {
+
+      if ($(this).hasClass('open')) {
+        $(this).removeClass('open');
+        $(this).parent().find('.breadcrumb-sub-menu').slideUp();
+        $('[data-target="header"]').find('[data-target="subNavDimmed"]').stop().fadeOut(150);
+      } else {
+        $(this).addClass('open');
+        $(this).parent().find('.breadcrumb-sub-menu').slideDown();
+        $('[data-target="header"]').find('[data-target="subNavDimmed"]').stop().fadeIn(150);
+      }
+    });
+
+
+    // Filter Open
+    $('[data-target="breadcrumbFilter"]').on('click', function () {
+      $('#filter').append($('[data-target="sdpLnb"]'));
+      setTimeout(function () {
+        $('[data-target="sdpLnb"]').addClass('open');
+      }, 20);
+      $('[data-target="header"]').find('[data-target="headerDimmed"]').stop().fadeIn(150);
+    });
+
+    // Filter Close
+    $('[data-close="breadcrumbFilter"]').on('click', function () {
+      $('[data-target="sdpLnb"]').removeClass('open');
+      setTimeout(function () {
+        $('main').prepend($('[data-target="sdpLnb"]'));
+      }, 200);
+      $('[data-target="header"]').find('[data-target="headerDimmed"]').stop().fadeOut(150);
+    });
+
+    $('[data-open="searchFilter"]').on('click', function () {
+      $('[data-target="searchFilter"]').addClass('open');
+      $('[data-dimmed="searchFilter"]').stop().fadeIn(150);
+
+    });
+
+    $('[data-close="searchFilter"]').on('click', function () {
+      $('[data-target="searchFilter"]').removeClass('open');
+      $('[data-dimmed="searchFilter"]').stop().fadeOut(150);
+    });
+
+    $('[data-dimmed="searchFilter"]').on('click', function () {
+      $('[data-target="searchFilter"]').removeClass('open');
+      $('[data-dimmed="searchFilter"]').stop().fadeOut(150);
+    });
+  });
+
+  // Footer
+  $(function () {
+    $('.item-button').on('click', function () {
+      if ($(this).hasClass('open')) {
+        $(this).removeClass('open');
+      } else {
+        $('.item-button').removeClass('open');
+        $(this).addClass('open');
+      }
+    });
+
+    $(document).click(function(event) {
+      if (!$(event.target).closest('.dropdown-content').length &&
+        !$(event.target).closest('.item-button').length) {
+        $('.item-button').removeClass('open');
+      }
+    });
+  })
+</script>

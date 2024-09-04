@@ -1,0 +1,168 @@
+.page-partner-main {
+  padding: 80px 0 120px 0;
+  .partner-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .partner-text-group {
+    text-align: center;
+    .text-group-title {
+      font-family: 'Samsung Sharp Sans', sans-serif;
+      font-size: 42px;
+      line-height: 54px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .text-group-sub-text {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      color: #363636;
+    }
+  }
+
+  .partner-text-group + .base-step {
+    margin-top: 80px;
+  }
+
+  .base-step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    gap: 210px;
+
+    > li {
+      position: relative;
+    }
+
+    > li + li:before {
+      position: absolute;
+      top: 22px;
+      left: -16px;
+      width: calc(210px - 32px);
+      height: 2px;
+      border-radius: 1px;
+      background: #2088FD;
+      content: '';
+      transform: translateX(-100%);
+    }
+
+    .step-item {
+      position: relative;
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #2088FD;
+      font-family: 'Samsung Sharp Sans', sans-serif;
+      font-size: 22px;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 96px;
+    }
+
+    .step-content {
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      width: fit-content;
+      text-align: center;
+    }
+
+    .step-title {
+      font-family: 'Samsung Sharp Sans', sans-serif;
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      white-space: nowrap;
+    }
+
+    .step-title + .step-text {
+      margin-top: 4px;
+    }
+
+    .step-text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #363636;
+    }
+  }
+
+  .base-step.type02 {
+    gap: 360px;
+    > li + li:before {
+      width: calc(328px - 32px);
+    }
+
+    .step-content {
+      min-width: 328px;
+    }
+  }
+
+  .base-step + .partner-card-group {
+    margin-top: 60px;
+  }
+
+  .partner-card-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+
+    .card-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      border: 1px solid #dcdeee;
+      border-radius: 24px;
+      background: #f8f9fa;
+      padding: 36px 24px;
+    }
+
+    .card-item-title {
+      font-family: 'Samsung Sharp Sans', sans-serif;
+      font-size: 20px;
+      line-height: 28px;
+      color: #1e1e1e;
+      font-weight: 700;
+    }
+
+    .card-item-text {
+      font-size: 16px;
+      line-height: 24px;
+      color: #535353;
+      margin: 8px 0 24px 0;
+      text-align: center;
+    }
+
+    .card-item-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 700;
+      color: #2088FD;
+      margin-top: auto;
+      span {
+        font-family: 'Samsung Sharp Sans', sans-serif;
+      }
+      svg {
+        margin-top: 3px;
+      }
+    }
+  }
+}
