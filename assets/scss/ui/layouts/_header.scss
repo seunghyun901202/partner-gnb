@@ -218,6 +218,17 @@
       height: initial;
       background: #fff;
     }
+    &:before {
+      @media (min-width: 1200px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: #fff;
+        content: '';
+      }
+    }
 
     > li {
       position: relative;
@@ -253,7 +264,7 @@
     > li > a:after {
       @media (min-width: 1200px) {
         position: absolute;
-        bottom: 0;
+        bottom: 1px;
         left: 0;
         z-index: 1;
         width: 100%;
@@ -312,6 +323,13 @@
         transform: scaleX(1);
         background-color: #0f42cf;
       }
+    }
+  }
+
+  .nav-btm-menu {
+    li:nth-child(2) .nav-dynamic-menu .dynamic-menu-item-contents .contents-item .contents-item-list > li > a {
+      font-size: 12px;
+      line-height: 14px;
     }
   }
 
@@ -406,8 +424,8 @@
           line-height: 16px;
           color: #535353;
           @media (min-width: 1200px) {
-            font-size: 16px;
-            line-height: 20px;
+            font-size: 14px;
+            line-height: 16px;
           }
         }
 
@@ -476,6 +494,7 @@
         transform: translate(-50%, 100%);
       }
 
+
       .nav-item {
         font-size: 14px;
         font-weight: 500;
@@ -495,13 +514,9 @@
           stroke-width: 1.2;
         }
 
+        .sub-nav-dropdown:hover .item-title,
         .item-title:hover {
-          color: #1e1e1e;
-          font-weight: 700;
-          letter-spacing: 0.33px;
-          span {
-            margin-top: -2px;
-          }
+          color: #0f42cf;
           .item-title-arrow {
             transform: rotate(180deg);
             path {
@@ -623,9 +638,6 @@
   .dropdown-list li:hover {
     background: #ECF1F7;
     a {
-      font-weight: 700;
-      margin-top: -2px;
-      letter-spacing: 0.33px;
       color: #1e1e1e;
     }
   }
@@ -693,7 +705,12 @@
       }
 
       li a .contents-underline {
+        color: #1e1e1e;
         border-bottom: 1px solid #737373;
+      }
+
+      li a .contents-underline + span {
+        color: #1e1e1e;
       }
     }
 
@@ -743,9 +760,9 @@
             > a {
               display: flex;
               align-items: center;
-              font-size: 12px;
+              font-size: 14px;
               font-weight: 500;
-              line-height: 12px;
+              line-height: 16px;
               color: #535353;
 
               .arrow {
@@ -759,12 +776,13 @@
             }
 
             > a:hover {
-              color: #1e1e1e;
-              font-weight: 700;
-              letter-spacing: 0.33px;
-              margin-top: -2px;
+              color: #0f42cf;
               .contents-underline {
-                border-bottom-color: #1e1e1e;
+                color: #0f42cf;
+                border-bottom-color: #0f42cf;
+              }
+              .contents-underline + span {
+                color: #0f42cf;
               }
             }
 
@@ -799,6 +817,9 @@
     height: 100vh;
     background: rgba(0,0,0,.4);
     content: '';
+    @media (min-width: 1200px) {
+      z-index: 1;
+    }
   }
 
   .header-breadcrumb {
@@ -925,7 +946,7 @@
     .sub-menu-quick {
       display: inline-flex;
       align-items: center;
-      padding: 0 12px 0 16px;
+      padding: 2px 12px 0 16px;
       width: fit-content;
       height: 36px;
       border-radius: 18px;
@@ -940,6 +961,7 @@
         background-size: cover;
         line-height: 0;
         color: #2088FD;
+        margin-top: -2px;
       }
     }
   }
@@ -1064,6 +1086,40 @@
   position: relative;
   @media (min-width: 1200px) {
     position: relative;
+  }
+}
+
+.sdp-header.doc {
+  .header-breadcrumb-fixed {
+    border-bottom: 1px solid #c9cddd;
+  }
+  .global-nav-top {
+    max-width: 1560px;
+    margin: 0 auto;
+    @media (min-width: 1200px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  .nav-btm-menu,
+  .dynamic-menu-item-contents {
+    max-width: 1560px;
+    margin: 0 auto;
+    @media (min-width: 1200px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1560px;
+    margin: 0 auto;
+    @media (min-width: 1200px) {
+      padding: 0 40px;
+    }
   }
 }
 
