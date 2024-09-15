@@ -85,7 +85,6 @@
     display: flex;
     flex-wrap: nowrap;
     padding: 40px;
-    overflow: hidden;
     height: 304px;
     .sdp-ft-wrap {
       flex-grow: 1;
@@ -296,9 +295,69 @@
   border-radius: 50%;
 }
 
+// 0915 CSS 추가
+.menu-item-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  height: initial;
+}
 
+.menu-item {
+  position: relative;
+}
 
+.menu-item:hover {
+  .menu-item-button {
+    color: #0f42cf;
 
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  .footer-dropdown-list {
+    display: block;
+  }
+}
 
+.menu-item.right {
+  .footer-dropdown-list {
+    left: -56px;
+  }
+}
 
+.footer-dropdown-list {
+  position: absolute;
+  left: -15px;
+  bottom: 8px;
+  z-index: 10;
+  transform: translateY(100%);
+  display: none;
+  width: max-content;
+  min-width: 128px;
+  border: 1px solid #E3E5E9;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  overflow: hidden;
 
+  > li {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  a {
+    font-size: 14px;
+    color: #535353 !important;
+    font-family: SamsungOne, sans-serif;
+    font-weight: 500;
+    padding: 0 16px;
+  }
+  > li:hover {
+    background: #ECF1F7;
+    a {
+      color: #1e1e1e !important;
+    }
+  }
+}
