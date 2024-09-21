@@ -546,6 +546,12 @@
         position: relative;
         display: inline-block;
 
+        .dropdown-list.lang {
+          left: initial;
+          right: 0;
+          transform: translate(0, 100%);
+        }
+
         .item-title {
           display: flex;
           align-items: center;
@@ -614,6 +620,8 @@
       gap: 4px;
       width: max-content;
       min-width: 128px;
+      max-height: 440px;
+      overflow-y: auto;
       border: 1px solid #E3E5E9;
       border-radius: 8px;
       background-color: #fff;
@@ -621,7 +629,6 @@
       z-index: 1;
       list-style: none;
       margin: 0;
-      overflow: hidden;
     }
   }
 
