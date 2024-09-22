@@ -1,0 +1,48 @@
+.base-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Samsung Sharp Sans', sans-serif !important;
+  font-weight: 700;
+  background: #2088fd;
+  width: 100%;
+  height: 48px;
+  font-size: 14px;
+  border-radius: 24px;
+  border: none;
+  outline: 0;
+  color: #fff;
+  @media (min-width: 1200px) {
+    height: 56px;
+    font-size: 16px;
+    border-radius: 28px;
+  }
+}
+
+.base-button:hover {
+  background: #1d7ce6;
+}
+
+.base-button:disabled {
+  background: #6aaffe;
+}
+
+.base-button.outline {
+  border: 1px solid #1e1e1e;
+  background: transparent;
+  color: #1e1e1e;
+}
+
+.base-button.md {
+  height: 48px;
+  font-size: 14px;
+}
+
+.base-button.outline:hover:not(:disabled) {
+  background: #efefef;
+}
+
+.base-button.outline:disabled {
+  border-color: #c4c4c4;
+  color: #c4c4c4;
+}

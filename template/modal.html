@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./partial/head-meta.html')
+<body>
+@@include('./layouts/pay-header.html')
+
+<!-- 페이 메인 페이지 -->
+<main class="page-partner-main">
+  <div class="partner-container">
+    <div style="display: grid; gap: 16px; padding: 80px 0;">
+      <button type="button" data-open="alertModal">Alert 모달</button>
+      <button type="button" data-open="confirmModal">Confirm 모달</button>
+      <button type="button" data-open="largeModal01">Large 모달 01</button>
+      <button type="button" data-open="largeModal02">Large 모달 02</button>
+      <button type="button" data-open="errorModal">Error 모달</button>
+    </div>
+
+    <!-- Alert 모달 -->
+    <article class="base-modal alert" data-target="alertModal">
+      <section class="base-modal-dialog">
+        <div class="base-modal-frame">
+          <div class="base-modal-body">
+            <div class="base-text-group">
+              <h1 class="text-group-title">
+                Title
+              </h1>
+              <p class="text-group-text">
+                Text
+              </p>
+            </div>
+          </div>
+          <footer class="base-modal-footer">
+            <button type="button" class="base-button" data-close="alertModal">
+              <span>Button Text</span>
+            </button>
+          </footer>
+        </div>
+      </section>
+    </article>
+
+    <!-- Confirm 모달 -->
+    <article class="base-modal confirm" data-target="confirmModal">
+      <section class="base-modal-dialog">
+        <div class="base-modal-frame">
+          <div class="base-modal-body">
+            <div class="base-text-group">
+              <h1 class="text-group-title">
+                Title
+              </h1>
+              <p class="text-group-text">
+                Text
+              </p>
+            </div>
+          </div>
+          <footer class="base-modal-footer">
+            <button type="button" class="base-button outline" data-close="confirmModal">
+              <span>Cancel</span>
+            </button>
+            <button type="button" class="base-button">
+              <span>Apply</span>
+            </button>
+          </footer>
+        </div>
+      </section>
+    </article>
+
+    <!-- Error 모달 -->
+    <article class="base-modal error" data-target="errorModal">
+      <section class="base-modal-dialog">
+        <div class="base-modal-frame">
+          <i class="base-modal-close" role="button" data-close="errorModal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M1 1L15 15" stroke="black" stroke-width="1.6"/>
+              <path d="M15 1L1 15" stroke="black" stroke-width="1.6"/>
+            </svg>
+          </i>
+          <div class="base-modal-body">
+            <div class="base-text-group">
+              <p class="text-group-title code">
+                500 error
+              </p>
+              <h1 class="text-group-title">
+                The server encountered an internal error or<br />
+                misconfiguration and was unable to complete your request.
+              </h1>
+              <p class="text-group-text">
+                Please contact administrator, <a href="#">webmaster@samsung.com</a> and inform the of the time the error occurred.<br />
+                And anything you might have done that may have caused the error.<br />
+                More information about this error may be available in the server error log.
+              </p>
+            </div>
+          </div>
+          <footer class="base-modal-footer">
+            <button type="button" class="base-button" data-close="errorModal">
+              <span>Close</span>
+            </button>
+          </footer>
+        </div>
+      </section>
+    </article>
+
+    <!-- Large 모달 01 -->
+    <article class="base-modal" data-target="largeModal01">
+      <section class="base-modal-dialog">
+        <div class="base-modal-frame">
+          <i class="base-modal-close" role="button" data-close="largeModal01">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M1 1L15 15" stroke="black" stroke-width="1.6"/>
+              <path d="M15 1L1 15" stroke="black" stroke-width="1.6"/>
+            </svg>
+          </i>
+          <div class="base-modal-body">
+            <div class="base-text-group">
+              <h1 class="text-group-title">
+                Title
+              </h1>
+              <p class="text-group-text">
+                Text
+              </p>
+            </div>
+          </div>
+          <footer class="base-modal-footer">
+            <button type="button" class="base-button" data-close="largeModal01">
+              <span>Button Text</span>
+            </button>
+          </footer>
+        </div>
+      </section>
+    </article>
+
+    <!-- Large 모달 02 -->
+    <article class="base-modal" data-target="largeModal02">
+      <section class="base-modal-dialog">
+        <div class="base-modal-frame">
+          <i class="base-modal-close" role="button" data-close="largeModal02">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M1 1L15 15" stroke="black" stroke-width="1.6"/>
+              <path d="M15 1L1 15" stroke="black" stroke-width="1.6"/>
+            </svg>
+          </i>
+          <div class="base-modal-body">
+            <div class="base-text-group">
+              <h1 class="text-group-title">
+                Title
+              </h1>
+              <p class="text-group-text">
+                Text
+              </p>
+            </div>
+          </div>
+          <footer class="base-modal-footer multiple">
+            <button type="button" class="base-button outline" data-close="largeModal02">
+              <span>Cancel</span>
+            </button>
+            <button type="button" class="base-button">
+              <span>Apply</span>
+            </button>
+          </footer>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+@@include('./layouts/footer.html')
+@@include('./partial/script.html')
+
+<script>
+  $('[data-open]').on('click', function () {
+    var target = $(this).data('open');
+    $('[data-target="' + target + '"]').addClass('open');
+  });
+
+  $('[data-close]').on('click', function () {
+    var target = $(this).data('close');
+    $('[data-target="' + target + '"]').removeClass('open');
+  });
+</script>
+</body>
+</html>
