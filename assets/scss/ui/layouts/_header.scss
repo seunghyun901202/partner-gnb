@@ -199,10 +199,13 @@
   }
 
   .nav-btm-menu {
+    li:nth-child(2) .nav-dynamic-menu .dynamic-menu-item-contents .contents-item:last-child {
+      margin-left: 40px;
+    }
     li:nth-child(2) .nav-dynamic-menu .dynamic-menu-item-contents .contents-item .contents-item-list > li > a {
-      font-size: 12px;
-      line-height: 14px;
-      letter-spacing: -0.36px;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: -0.42px;
     }
   }
 
@@ -500,7 +503,7 @@
     transition: transform .3s ease;
 
     .dynamic-menu-item-contents {
-      padding: 24px 0;
+      padding: 24px 0 32px 0;
     }
 
     .contents-item-list {
@@ -539,7 +542,7 @@
 
     .dynamic-menu-item-contents {
       display: flex;
-      gap: 56px;
+      gap: 60px;
 
       .contents-item {
         display: flex;
