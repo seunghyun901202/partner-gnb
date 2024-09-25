@@ -199,6 +199,9 @@
   }
 
   .nav-btm-menu {
+    li:nth-child(2) .nav-dynamic-menu .dynamic-menu-item-contents {
+      padding: 24px 0 32px 0;
+    }
     li:nth-child(2) .nav-dynamic-menu .dynamic-menu-item-contents .contents-item:last-child {
       margin-left: 40px;
     }
@@ -552,7 +555,7 @@
         .contents-item-title {
           display: flex;
           align-items: center;
-          height: 48px;
+          height: 36px;
           padding-left: 0;
           font-size: 14px;
           font-weight: 700;
