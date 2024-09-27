@@ -68,14 +68,25 @@
     }
   }
   .cookie-text-button {
+    position: relative;
     display: block;
     font-family: 'Samsung Sharp Sans', sans-serif;
     font-weight: 700;
     color: #535353;
-    margin-top: 32px;
+    width: fit-content;
     font-size: 16px;
     line-height: 20px;
     text-align: center;
+    margin: 32px auto 0 auto;
+  }
+  .cookie-text-button:hover:before {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #535353;
+    content: '';
   }
 }
 
@@ -88,8 +99,7 @@
     border-radius: 16px;
   }
   .base-section + .base-section {
-    border-top: initial;
-    margin-top: 16px;
+    margin-top: 24px;
   }
 
   .base-section {
@@ -162,6 +172,20 @@
     padding: 0;
     cursor: pointer;
   }
+
+  .cookie-manager-text-button:hover span {
+    position: relative;
+    &:before {
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #535353;
+      content: '';
+    }
+  }
+
   .cookie-manager-text-button.open {
     svg {
       transform: rotate(180deg);
