@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./partial/head-meta.html')
+<body>
+@@include('./layouts/pay-header.html')
+
+<!-- 페이 메인 페이지 -->
+<main class="page-partner-main">
+  <div class="partner-container">
+    <div style="display: grid; gap: 16px; padding: 80px 0;">
+      <button type="button" data-open="cookieModal">쿠키 모달</button>
+      <button type="button" data-open="cookieManagerModal">쿠키 매니저 모달</button>
+    </div>
+
+    <!-- Start: 쿠키 배너형 -->
+    <article class="cookie-banner">
+      <div class="cookie-banner-contents">
+        <h1 class="cookie-banner-title">SAMSUNG and Cookies</h1>
+
+        <p class="cookie-banner-text">
+          Our site uses cookies, including optional cookies to provide you with the best experience on our website and relevant advertising based on your use of our site, You can manage your preferences or accept all cookies. You can also read our <a href="#">Privacy Policy</a> and <a href="#">Cookie Policy</a>.
+        </p>
+
+        <div class="cookie-banner-btn-group">
+          <button type="button" class="base-button outline md">
+            <span>I Want to Manage</span>
+          </button>
+          <button type="button" class="base-button md">
+            <span>OK, Let's Go!</span>
+          </button>
+        </div>
+
+        <svg class="cookie-banner-close" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M1 1L15 15" stroke="#1E1E1E" stroke-width="1.6"/>
+          <path d="M15 1L1 15" stroke="#1E1E1E" stroke-width="1.6"/>
+        </svg>
+      </div>
+    </article>
+    <!-- End: 쿠키 배너형 -->
+
+    <!-- Start: 쿠키 모달형 -->
+    <article class="base-modal base-cookie-modal" data-target="cookieModal">
+      <section class="base-modal-dialog">
+        <div class="base-modal-frame">
+          <i class="base-modal-close" role="button" data-close="cookieModal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M1 1L15 15" stroke="black" stroke-width="1.6"/>
+              <path d="M15 1L1 15" stroke="black" stroke-width="1.6"/>
+            </svg>
+          </i>
+          <div class="base-modal-body">
+            <div class="base-text-group">
+              <h1 class="text-group-title">
+                SAMSUNG and Cookies
+              </h1>
+              <p class="text-group-text">
+                Samsung Electronics, and its partners, use cookies and similar technologies (collectively “technologies”) to store and access information on your device. Some of these technologies are technically essential to provide you with a secure, well-functioning and reliable website. We would also like to set optional/non-essential technologies to give you the best user experience. Optional technologies make it possible to measure the audience of our website, to display personalized advertising on third-party sites based on your profile, to track your location, to carry out targeted marketing campaigns and to personalize the content of our website depending on your usage. Through these technologies, we will collect information such as your interaction with our website, your preferences and your browsing habits.<br />
+                If you are happy for technologies to be used for these purposes, click on "Accept All" to accept all of the technologies. Alternatively, you may click "Continue without accepting" to refuse all non-essential technologies. You can also make a choice by category by clicking "Configure". You can withdraw your consent and modify your choices at any time by clicking on the "Cookie Preferences" button located at the bottom of our website. Further information is also available in
+                our <a href="#">Cookie Policy</a> and our <a href="#">Privacy Policy</a>.
+              </p>
+            </div>
+          </div>
+          <footer class="base-modal-footer multiple">
+            <button type="button" class="base-button outline" data-close="cookieModal">
+              <span>Configure</span>
+            </button>
+            <button type="button" class="base-button">
+              <span>Accept All</span>
+            </button>
+          </footer>
+          <a href="#" class="cookie-text-button">Continue without accepting</a>
+        </div>
+      </section>
+    </article>
+    <!-- End: 쿠키 모달형 -->
+
+    <!-- Start: Manager Cookies -->
+    <article class="base-modal cookie-manager-modal page-modal" data-target="cookieManagerModal">
+      <section class="base-modal-dialog">
+        <div class="base-modal-frame">
+          <i class="base-modal-close" role="button" data-close="cookieManagerModal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M1 1L15 15" stroke="black" stroke-width="1.6"/>
+              <path d="M15 1L1 15" stroke="black" stroke-width="1.6"/>
+            </svg>
+          </i>
+          <div class="base-modal-body">
+            <div class="base-text-group">
+              <h1 class="text-group-title">
+                Manage Your Cookies
+              </h1>
+              <p class="text-group-text">We use cookies to improve your experience on our website and to show you relevant advertising. Manage yout settings for our cookies below.</p>
+            </div>
+
+            <div class="base-section">
+              <div class="base-section-body">
+                <div class="base-section-panel">
+                  <h2 class="base-section-title">Essential Cookies</h2>
+                  <p class="base-section-text">These cookies are essential as they enable you to move arounfd the website. This category cannot be disabled.</p>
+
+                  <div class="cookie-manager-cta">
+                    <button type="button" class="cookie-manager-text-button" data-target="cookieButton">
+                      <span>View Cookies</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 4.5L7 9.5L12 4.5" stroke="#363636" stroke-width="1.2"/>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="cookie-manager-table" data-target="cookieTable">
+                    <dl>
+                      <dt>Company</dt>
+                      <dt>Domain</dt>
+                      <dd>Samsung Electronics</dd>
+                      <dd>.samsungdeveloperconference.com</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="base-section">
+              <div class="base-section-body">
+                <div class="base-section-panel">
+                  <h2 class="base-section-title">Analytical/Performance Cookies</h2>
+                  <p class="base-section-text">These cookies collect information about how you use our website. for example which pages you vistit most often. All information these cookies collect is used to improve how the website works.</p>
+
+                  <div class="cookie-manager-cta">
+                    <button type="button" class="cookie-manager-text-button" data-target="cookieButton">
+                      <span>View Cookies</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 4.5L7 9.5L12 4.5" stroke="#363636" stroke-width="1.2"/>
+                      </svg>
+                    </button>
+
+                    <div class="base-sort">
+                      <label>
+                        <input type="radio" name="sort1" checked hidden />
+                        <span class="base-sort-label">NO</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="sort1" hidden />
+                        <span class="base-sort-label">YES</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="cookie-manager-table" data-target="cookieTable">
+                    <dl>
+                      <dt>Company</dt>
+                      <dt>Domain</dt>
+                      <dd>LinkedIn</dd>
+                      <dd>.linkedin.com</dd>
+                      <dd>Meta (formerly Facebook)</dd>
+                      <dd>.samsungdeveloperconference.com</dd>
+                      <dd>Google Inc.</dd>
+                      <dd>.samsungdeveloperconference.com</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="base-section">
+              <div class="base-section-body">
+                <div class="base-section-panel">
+                  <h2 class="base-section-title">Functionality Cookies</h2>
+                  <p class="base-section-text">These cookies allow our website to remember choices you make (such as your user name, language or the region your are in) and tailor the website to provide enhanced features and content for you.</p>
+
+                  <div class="cookie-manager-cta">
+                    <button type="button" class="cookie-manager-text-button" data-target="cookieButton">
+                      <span>View Cookies</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 4.5L7 9.5L12 4.5" stroke="#363636" stroke-width="1.2"/>
+                      </svg>
+                    </button>
+
+                    <div class="base-sort">
+                      <label>
+                        <input type="radio" name="sort2" checked hidden />
+                        <span class="base-sort-label">NO</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="sort2" hidden />
+                        <span class="base-sort-label">YES</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="cookie-manager-table" data-target="cookieTable">
+                    <dl>
+                      <dt>Company</dt>
+                      <dt>Domain</dt>
+                      <dd>LinkedIn</dd>
+                      <dd>.ads.linkedin.com, .linkedin.com</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="base-section">
+              <div class="base-section-body">
+                <div class="base-section-panel">
+                  <h2 class="base-section-title">Advertising Cookies</h2>
+                  <p class="base-section-text">These cookies gather information about your browser habits. They remember that you've visited our website and share this information with other organizations such as advertisers.</p>
+
+                  <div class="cookie-manager-cta">
+                    <button type="button" class="cookie-manager-text-button" data-target="cookieButton">
+                      <span>View Cookies</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 4.5L7 9.5L12 4.5" stroke="#363636" stroke-width="1.2"/>
+                      </svg>
+                    </button>
+
+                    <div class="base-sort">
+                      <label>
+                        <input type="radio" name="sort3" checked hidden />
+                        <span class="base-sort-label">NO</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="sort3" hidden />
+                        <span class="base-sort-label">YES</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="cookie-manager-table" data-target="cookieTable">
+                    <dl>
+                      <dt>Company</dt>
+                      <dt>Domain</dt>
+                      <dd>LinkedIn</dd>
+                      <dd>.linkedin.com</dd>
+                      <dd>Meta (formerly Facebook)</dd>
+                      <dd>.samsungdeveloperconference.com</dd>
+                      <dd>Google Inc.</dd>
+                      <dd>.samsungdeveloperconference.com</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="base-modal-footer">
+            <button type="button" class="base-button">
+              <span>Save Preference</span>
+            </button>
+          </footer>
+        </div>
+      </section>
+    </article>
+    <!-- End: Manager Cookies -->
+  </div>
+</main>
+
+@@include('./layouts/footer.html')
+@@include('./partial/script.html')
+
+<script>
+  $('[data-open]').on('click', function () {
+    var target = $(this).data('open');
+    $('[data-target="' + target + '"]').addClass('open');
+  });
+
+  $('[data-close]').on('click', function () {
+    var target = $(this).data('close');
+    $('[data-target="' + target + '"]').removeClass('open');
+  });
+
+  // 쿠키 관련 스크립트
+  $('[data-target="cookieButton"]').on('click', function () {
+    if ($(this).hasClass('open')) {
+      $(this).removeClass('open');
+      $(this).parent().parent().find('[data-target="cookieTable"]').slideUp();
+    } else {
+      $(this).addClass('open');
+      $(this).parent().parent().find('[data-target="cookieTable"]').slideDown();
+    }
+  });
+
+  $('.cookie-banner-close').on('click', function () {
+    $('.cookie-banner').hide();
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  width: 100%;
+  padding: 40px 0;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.16);
+  background: #fff;
+  .cookie-banner-contents {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 64px;
+  }
+
+  .cookie-banner-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: initial;
+    cursor: pointer;
+  }
+
+  .cookie-banner-title {
+    font-family: 'Samsung Sharp Sans', sans-serif;
+    color: #1e1e1e;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+
+  .cookie-banner-text {
+    color: #1e1e1e;
+    font-size: 14px;
+    line-height: 20px;
+
+    a {
+      font-family: 'Samsung Sharp Sans', sans-serif;
+      font-weight: 700;
+      color: #2088fd;
+    }
+  }
+
+  .cookie-banner-btn-group {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+    gap: 16px;
+    .base-button {
+      min-width: 180px;
+      width: fit-content;
+      padding: 0 24px;
+      font-size: 16px;
+    }
+  }
+}
+
+.base-modal.base-cookie-modal {
+  .base-modal-body {
+    .text-group-text {
+      a {
+        font-family: "Samsung Sharp Sans", sans-serif;
+        color: #2088fd;
+        font-weight: 700;
+      }
+    }
+  }
+  .cookie-text-button {
+    display: block;
+    font-family: 'Samsung Sharp Sans', sans-serif;
+    font-weight: 700;
+    color: #535353;
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+.cookie-manager-modal.page-modal {
+  .base-modal-body {
+    height: initial;
+    max-height: calc(100dvh - 408px);
+  }
+  .base-section .base-section-panel {
+    border-radius: 16px;
+  }
+  .base-section + .base-section {
+    border-top: initial;
+    margin-top: 16px;
+  }
+
+  .base-section {
+    .base-section-title {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 4px;
+    }
+    .base-section-text {
+      font-size: 16px;
+      line-height: 24px;
+      color: #535353;
+    }
+  }
+
+  .cookie-manager-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  .cookie-manager-table {
+    display: none;
+    margin-top: 16px;
+
+    dl {
+      display: grid;
+      border-top: 1px solid #000;
+      border-bottom: 2px solid #efefef;
+      background: #fff;
+      grid-template-columns: 220px auto;
+      dd:nth-child(odd) {
+        border-left: initial;
+      }
+    }
+
+    dt, dd {
+      font-family: 'SamsungOne', sans-serif;
+      font-weight: 700;
+      color: #535353;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 0;
+      padding: 16px;
+    }
+    dt + dt,
+    dd + dd {
+      border-left: 1px solid #efefef;
+    }
+    dd {
+      font-weight: 400;
+      border-top: 1px solid #efefef;
+    }
+  }
+
+  .cookie-manager-text-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 22px;
+    font-family: "Samsung Sharp Sans", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #535353;
+    font-weight: 700;
+    border: none;
+    background: initial;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  .cookie-manager-text-button.open {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.base-sort {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 4px;
+  border: 2px solid #fff;
+  label {
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+  .base-sort-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 8px;
+    font-family: 'SamsungOne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #7c7c7c;
+    border-radius: 4px;
+    line-height: 1;
+  }
+  input:checked + .base-sort-label {
+    font-weight: 700;
+    color: #fff;
+    background: #2088fd;
+  }
+}
