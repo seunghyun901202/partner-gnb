@@ -1,3 +1,30 @@
+<!-- QR 영역 -->
+<article class="qr-item">
+  <div class="qr-item-area" data-target="qrItem">
+    <div class="qr-item-box">
+      <figure class="qr-item-figure">
+        <img src="/assets/img/img-qr.jpg" alt="QR 코드" />
+        <figcaption>
+          Add to Wallet<br />
+          Test Tool
+        </figcaption>
+      </figure>
+      <div class="qr-item-arrow top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M10.497 6.3217L11.0101 6.81688L12.0005 5.79066L11.4874 5.29548L6.49581 0.478385L6.00063 0.000514293L5.50546 0.478385L0.513904 5.29548L0.000794139 5.79066L0.991148 6.81688L1.50426 6.3217L5.28869 2.66954L5.28869 12.002L6.71484 12.002L6.71484 2.67172L10.497 6.3217Z" fill="white"/>
+        </svg>
+        <span class="qr-item-text">Add to Wallet Test Tool</span>
+      </div>
+
+      <div class="qr-item-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M10.497 5.6783L11.0101 5.18312L12.0005 6.20934L11.4874 6.70452L6.49581 11.5216L6.00063 11.9995L5.50546 11.5216L0.513904 6.70452L0.000794139 6.20934L0.991148 5.18312L1.50426 5.6783L5.28869 9.33046L5.28869 -0.00204104L6.71484 -0.00204109L6.71484 9.32828L10.497 5.6783Z" fill="white"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</article>
+
 <footer class="sdp-footer" translate="no">
     <div class="sdp-ft-wrap web-d-none">
         <a class="navbar-brand" href="/">Samsung Developer</a>
@@ -303,3 +330,26 @@
         </div>
     </div>
 </footer>
+
+<script>
+
+  $('[data-target="qrItem"]').on('click', function () {
+    $(this).parent().toggleClass('collapse');
+  });
+
+  const $footer = $('.sdp-footer');
+
+  // IntersectionObserver를 설정하는 함수
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        $('[data-target="qrItem"]').parent().addClass('absolute');
+      } else {
+        $('[data-target="qrItem"]').parent().removeClass('absolute');
+      }
+    });
+  });
+
+  // Footer가 화면에 들어오는지 감시
+  observer.observe($footer[0]); // jQuery 객체를 기본 DOM 요소로 변환
+</script>

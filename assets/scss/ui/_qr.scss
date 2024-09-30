@@ -1,0 +1,111 @@
+body {
+  position: relative;
+}
+
+.qr-item {
+  position: fixed;
+  bottom: 24px;
+  right: 40px;
+  z-index: 16;
+  // transition: all .3s ease;
+  width: 156px;
+
+  .qr-item-area {
+    border-radius: 16px;
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.20);
+    background: #fff;
+    transition: all .3s ease;
+    transition-delay: .3s;
+  }
+
+  .qr-item-box {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .qr-item-figure {
+    position: relative;
+    z-index: 5;
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px 16px 0 16px;
+    img {
+      width: 100%;
+    }
+    figcaption {
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 16px;
+      font-family: "Samsung Sharp Sans", sans-serif;
+      font-weight: 700;
+      text-align: center;
+      color: #1e1e1e;
+      padding: 0 16px 16px 16px;
+    }
+  }
+
+  .qr-item-arrow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 0 0 16px 16px;
+    padding: 22px 0 6px 0;
+    background: #4D50FF;
+    transition: transform .3s ease;
+  }
+
+  .qr-item-arrow.top {
+    top: 0;
+    bottom: initial;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 0;
+    border-radius: 16px 16px 0 0;
+    cursor: pointer;
+  }
+
+  .qr-item-text {
+    font-family: "Samsung Sharp Sans", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+  }
+}
+
+.qr-item:not(.collapse) {
+  .qr-item-box:hover .qr-item-arrow:not(.top) {
+    transform: translateY(24px);
+  }
+}
+
+.qr-item.collapse {
+  bottom: 24px;
+  z-index: 16;
+  .qr-item-area {
+    transform: translateY(calc(100% + 24px));
+    transition-delay: initial;
+  }
+
+  .qr-item-arrow.top {
+    transform: translateY(-100%);
+    transition-delay: .3s;
+  }
+}
+
+.qr-item.absolute {
+  position: absolute;
+  bottom: 421px;
+  z-index: 10;
+}
+
+.qr-item.collapse.absolute {
+  // bottom: 397px;
+}
